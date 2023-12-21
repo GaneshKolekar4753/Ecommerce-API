@@ -1,7 +1,9 @@
 
 const mongoose=require('mongoose');
 
-mongoose.connect('mongodb://localhost/product-db');
+const mongooseURI=process.env.MONGODB_URI;
+
+mongoose.connect(`${mongooseURI}product-db`);
 
 const db = mongoose.connection;
 
